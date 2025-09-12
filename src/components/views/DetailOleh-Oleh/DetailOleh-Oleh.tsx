@@ -13,7 +13,11 @@ const DetailOlehOleh = () => {
                     <div className="w-full md:w-[800px] flex flex-col gap-5">
                         <h1 className="text-xl md:text-3xl font-bold">Roti Durian Panglima</h1>
                         <span className="text-lg md:text-xl text-primary">Rp39.000</span>
-                        <button className="btn w-[200px] bg-primary text-white">Pesan Sekarang</button>
+                        <button className="btn w-[200px] bg-primary text-white">
+                            <Link href={"/delivery"}>
+                                Pesan Sekarang
+                            </Link>
+                        </button>
                         <p><strong>Kategori:</strong> Oleh - Oleh</p>
                     </div>
                 </div>
