@@ -79,14 +79,14 @@ const DashboardLayout = (props: PropTypes) => {
       </nav>
       <nav className="w-full fixed top-0 left-0 z-50 bg-white md:hidden">
         <div className="flex items-center justify-between shadow-sm w-full p-2">
-          <div className="pl-2 w-[150px]">
+          <Link href={"/"} className="pl-2 w-[150px]">
             <Image
                 src="/image/icon/logo.png"
                 alt="logo"
                 width={1000}
                 height={1000}
               />
-          </div>
+          </Link>
           <div className="drawer drawer-end w-10">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
@@ -97,22 +97,22 @@ const DashboardLayout = (props: PropTypes) => {
               <div className="list bg-secondary text-white min-h-full w-80 text-xl">
                 <label htmlFor="my-drawer-4" className="px-4 py-3"><HiX size={35} /></label>
                 <div className="join join-vertical">
-                  <span className="px-4 py-4 border-y">Cara Pesan</span>
+                  <Link href={"/cara-pesan"} className="px-4 py-4 border-y">Cara Pesan</Link>
                   <div className="collapse collapse-arrow join-item border-b">
                     <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title">Menu Kami</div>
+                    <Link href={"/menu-kami"} className="collapse-title">Menu Kami</Link>
                     <div className="collapse-content grid bg-secondary-dark">
-                      <span className="px-4 py-4 border-b">Oleh - Oleh</span>
-                      <span className="px-4 pt-4">Snack Box</span>
+                      <Link href={"/menu-kami/oleh-oleh"} className="px-4 py-4 border-b">Oleh - Oleh</Link>
+                      <Link href={"/menu-kami/snack-box"} className="px-4 pt-4">Snack Box</Link>
                     </div>
                   </div>
-                  <span className="px-4 py-4 border-b">Berita Terbaru</span>
+                  <Link href={"/berita-terbaru"} className="px-4 py-4 border-b">Berita Terbaru</Link>
                   <div className="collapse collapse-arrow join-item border-b">
                     <input type="radio" name="my-accordion-4" />
                     <div className="collapse-title">Tentang Gerai Panglima</div>
                     <div className="collapse-content grid bg-secondary-dark">
-                      <span className="px-4 py-4 border-b">Lokasi</span>
-                      <span className="px-4 pt-4">Kontak Kami</span>
+                      <Link href={"/lokasi"} className="px-4 py-4 border-b">Lokasi</Link>
+                      <Link href={"/kontak-kami"} className="px-4 pt-4">Kontak Kami</Link>
                     </div>
                   </div>
                 </div>
