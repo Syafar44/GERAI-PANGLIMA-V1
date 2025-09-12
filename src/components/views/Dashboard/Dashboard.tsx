@@ -50,22 +50,22 @@ const Dashboard = () => {
                     </div>
                 </section>
             </div>
-            <section className="flex flex-col gap-5 px-5 md:px-80 py-10 md:flex-row md:gap-10 justify-between w-full">
+            <section className="flex flex-col gap-5 px-5 md:px-10 2xl:px-80 py-10 md:flex-row md:gap-10 justify-between w-full">
                 <iframe
-                    className="w-full h-[220px] md:h-[400px] rounded-sm"
+                    className="w-full h-[220px] md:h-[250px] 2xl:h-[400px] rounded-sm"
                     src="https://www.youtube.com/embed/PmC4LVc7nKM">
                 </iframe>
                 <iframe
-                    className="w-full h-[220px] md:h-[400px] rounded-sm"
+                    className="w-full h-[220px] md:h-[250px] 2xl:h-[400px] rounded-sm"
                     src="https://www.youtube.com/embed/ULyhyA0DUYU">
                 </iframe>
             </section>
             <div className="py-5 w-full bg-primary">
-                <h1 className="text-xl md:text-5xl font-bold text-center text-white italic">
+                <h1 className="text-xl md:text-3xl 2xl:text-5xl font-bold text-center text-white italic">
                     #GERAIPANGLIMA
                 </h1>
             </div>
-            <section className="md:p-20 py-10 flex justify-center">
+            <section className="xl:p-20 py-10 flex justify-center">
                 <div className="w-full md:w-[80%]">
                     <Swiper
                         modules={[Navigation, Pagination]}

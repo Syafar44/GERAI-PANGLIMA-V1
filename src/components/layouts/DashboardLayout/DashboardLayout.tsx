@@ -40,7 +40,7 @@ const DashboardLayout = (props: PropTypes) => {
     <div>
       <nav
         className={cn(
-          "py-5 px-20 w-full fixed top-0 left-0 z-50 transition-colors duration-300 hidden md:block",
+          "px-20 py-2 w-full fixed top-0 left-0 z-50 transition-colors duration-300 hidden md:block",
           activeSubPage
             ? "shadow-md bg-white"
             : "bg-linear-to-b from-black to-transparent"
@@ -48,27 +48,31 @@ const DashboardLayout = (props: PropTypes) => {
       >
         <ul className="flex justify-between items-center">
           <li className="order-3">
-            <Image
-              className={cn(
-                "w-[200px]",
-                activeSubPage ? "" : "grayscale brightness-0 invert"
-              )}
-              src="/image/icon/logo.png"
-              alt="logo"
-              width={1000}
-              height={1000}
-            />
+            <Link href={"/"}>
+              <Image
+                className={cn(
+                  "w-[200px]",
+                  activeSubPage ? "" : "grayscale brightness-0 invert"
+                )}
+                src="/image/icon/logo.png"
+                alt="logo"
+                width={1000}
+                height={1000}
+              />
+            </Link>
           </li>
           {LIST_CONSTANTS.map((item) => (
             <li
               key={item.key}
               className={cn(
-                "md:text-lg lg:text-2xl font-bold",
+                "md:text-nowrap lg:text-xl xl:text-2xl font-bold py-6 px-5 hover:bg-secondary/10 hover:scale-105 hover:border-b-2 duration-200 transition ease-in-out",
                 activeSubPage ? "text-primary" : "text-white",
                 `${orderClass[item.order]}`
               )}
             >
-              {item.label}
+              <Link href={item.href}>
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -123,7 +127,7 @@ const DashboardLayout = (props: PropTypes) => {
           className="w-full h-[500px] md:h-[400px] bg-center bg-repeat"
           style={{ backgroundImage: "url('/image/background.jpg')" }}
         >
-          <div className="px-20 py-10 flex justify-between">
+          <div className="px-10 sm:px-20 py-10 flex flex-col md:flex-row items-center md:justify-between">
             <nav className="grid gap-5">
               <Image
                 className="w-[300px]"
@@ -155,7 +159,7 @@ const DashboardLayout = (props: PropTypes) => {
             </div>
           </div>
           <div className="border border-primary" />
-          <div className="px-20 py-5">
+          <div className="px-10 sm:px-20 py-5">
             <p className="text-center md:text-start">
               © 2025 Gerai Panglima by <Link className="underline text-gray-600" href="https://www.panglimaroqiiqugroup.com/" target="_blank">Panglima Roqiiqu Group</Link> | All rights reserved.
             </p>
