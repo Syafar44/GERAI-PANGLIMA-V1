@@ -1,8 +1,8 @@
 const LIST_CONSTANTS = [
     {
-        key: 'cara-pesan',
-        label: 'Cara Pesan',
-        href: '/cara-pesan',
+        key: 'beranda',
+        label: 'Beranda',
+        href: '/',
         order: 1,
     },
     {
@@ -12,15 +12,15 @@ const LIST_CONSTANTS = [
         order: 2,
     },
     {
-        key: 'berita-terbaru',
+        key: 'news',
         label: 'Berita Terbaru',
-        href: '/berita-terbaru',
+        href: '/news',
         order: 4,
     },
     {
         key: 'tentang-kami',
         label: 'Tentang Kami',
-        href: '/tentang-kami',
+        href: '/about',
         order: 5,
     },
 ]

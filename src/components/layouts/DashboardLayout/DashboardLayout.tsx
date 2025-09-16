@@ -97,7 +97,7 @@ const DashboardLayout = (props: PropTypes) => {
               <div className="list bg-secondary text-white min-h-full w-80 text-xl">
                 <label htmlFor="my-drawer-4" className="px-4 py-3"><HiX size={35} /></label>
                 <div className="join join-vertical">
-                  <Link href={"/cara-pesan"} className="px-4 py-4 border-y">Cara Pesan</Link>
+                  <Link href={"/"} className="px-4 py-4 border-y">Beranda</Link>
                   <div className="collapse collapse-arrow join-item border-b">
                     <input type="radio" name="my-accordion-4" />
                     <Link href={"/menu-kami"} className="collapse-title">Menu Kami</Link>
@@ -106,13 +106,13 @@ const DashboardLayout = (props: PropTypes) => {
                       <Link href={"/menu-kami/snack-box"} className="px-4 pt-4">Snack Box</Link>
                     </div>
                   </div>
-                  <Link href={"/berita-terbaru"} className="px-4 py-4 border-b">Berita Terbaru</Link>
+                  <Link href={"/news"} className="px-4 py-4 border-b">Berita Terbaru</Link>
                   <div className="collapse collapse-arrow join-item border-b">
                     <input type="radio" name="my-accordion-4" />
-                    <div className="collapse-title">Tentang Gerai Panglima</div>
+                    <Link href={"/about"} className="collapse-title">Tentang Gerai Panglima</Link>
                     <div className="collapse-content grid bg-secondary-dark">
-                      <Link href={"/lokasi"} className="px-4 py-4 border-b">Lokasi</Link>
-                      <Link href={"/kontak-kami"} className="px-4 pt-4">Kontak Kami</Link>
+                      <Link href={"/location"} className="px-4 py-4 border-b">Lokasi</Link>
+                      <Link href={"/contact"} className="px-4 pt-4">Kontak Kami</Link>
                     </div>
                   </div>
                 </div>
@@ -138,19 +138,19 @@ const DashboardLayout = (props: PropTypes) => {
               /> 
               <ul className="text-white grid gap-3 text-xl md:grid-cols-2">
                 <li>
-                  <span> ➤ Kontak Kami</span>
+                  <Link href={"/contact"}> ➤ Kontak Kami</Link>
                 </li>
                 <li>
-                  <span> ➤ Tentang Gerai Panglima</span>
+                  <Link href={"/about"}> ➤ Tentang Gerai Panglima</Link>
                 </li>
                 <li>
-                  <span> ➤ Lokasi kami</span>
+                  <Link href={"/location"}> ➤ Lokasi kami</Link>
                 </li>
                 <li>
-                  <span> ➤ Berita Terbaru</span>
+                  <Link href={"/news"}> ➤ Berita Terbaru</Link>
                 </li>
                 <li>
-                  <span> ➤ Pemesanan</span>
+                  <Link href={"/delivery"}> ➤ Pemesanan</Link>
                 </li>
               </ul>
             </nav>

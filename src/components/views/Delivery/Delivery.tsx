@@ -4,11 +4,11 @@ const Delivery = () => {
     return (
         <div>
             <div className="mt-14 sm:mt-16 lg:mt-20 xl:mt-24">
-                <Image src="/image/delivery.png" className="w-full mt-14 md:mt-0 md:h-[600px] object-center object-cover" alt="banner" width={1000} height={1000}/>
+                <Image src="/image/main/delivery.png" className="w-full" alt="banner" width={1000} height={1000}/>
             </div>
             <section>
                 <div className="flex flex-col md:flex-row items-center justify-center p-10 gap-10">
-                    <div className="card bg-base-100 w-80 hover:scale-90 transition-all duration-300 ease-in-out">
+                    <div className="card bg-base-100 hover:scale-90 transition-all duration-300 ease-in-out">
                         <div className="bg-primary p-10 flex justify-center rounded-t-xl">
                             <Image src="/image/icon/whatsapp.svg" className="w-32" alt="banner" width={1000} height={1000}/>
                         </div>
@@ -17,10 +17,10 @@ const Delivery = () => {
                             <h2 className="text-xl font-bold">
                                 Buka Hpmu sekarang dan Order
                             </h2>
-                            <p className="text-primary">Jam Order 08:00 - 17:00</p>
+                            <p className="text-primary">Jam Pemesanan 08:00 - 17:00</p>
                         </div>
                     </div>
-                    <div className="card bg-base-100 w-80 hover:scale-90 transition-all duration-300 ease-in-out">
+                    <div className="card bg-base-100 hover:scale-90 transition-all duration-300 ease-in-out">
                         <div className="bg-primary p-10 flex justify-center rounded-t-xl">
                             <Image src="/image/icon/shopee.png" className="w-32" alt="banner" width={1000} height={1000}/>
                         </div>
@@ -32,7 +32,7 @@ const Delivery = () => {
                             <p className="text-primary">Buka Chat 08:00 - 17:00</p>
                         </div>
                     </div>
-                    <div className="card bg-base-100 w-80 hover:scale-90 transition-all duration-300 ease-in-out">
+                    <div className="card bg-base-100 hover:scale-90 transition-all duration-300 ease-in-out">
                         <div className="bg-primary p-10 flex justify-center rounded-t-xl">
                             <Image src="/image/icon/tiktok.svg" className="w-32" alt="banner" width={1000} height={1000}/>
                         </div>
