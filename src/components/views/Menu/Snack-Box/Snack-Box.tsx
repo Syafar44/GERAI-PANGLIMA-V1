@@ -1,14 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
-import useOlehOleh from "./useOleh-Oleh";
+import useSnackBox from "./useSnack-Box";
 import { IProduk } from "@/types/Produk";
 import { convertIDR } from "@/utils/currency";
 import { useEffect } from "react";
 import useChangeUrl from "@/hooks/useChangeUrl";
 
-const OlehOleh = () => {
+const SnackBox = () => {
 
-    const { dataProduk, isPendingProduk, router } = useOlehOleh();
+    const { dataProduk, isPendingProduk, router } = useSnackBox();
 
     const produk = dataProduk?.data || []
 
@@ -42,4 +42,4 @@ const OlehOleh = () => {
     )
 }
 
-export default OlehOleh
+export default SnackBox

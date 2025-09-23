@@ -13,7 +13,7 @@ const Menu = () => {
                         <Image src="/image/produk/rotidurian.png" className="w-full" alt="banner" width={1000} height={1000}/>
                         <p className="text-4xl text-primary">Oleh - Oleh</p>
                     </Link>
-                    <Link href={"/menu-kami/oleh-oleh"} className="p-20 text-center hover:bg-secondary/10 hover:scale-105 duration-200 rounded">
+                    <Link href={"/menu-kami/snack-box"} className="p-20 text-center hover:bg-secondary/10 hover:scale-105 duration-200 rounded">
                         <Image src="/image/produk/rotidurian.png" className="w-full" alt="banner" width={1000} height={1000}/>
                         <p className="text-4xl text-primary">Snack Bok</p>
                     </Link>
