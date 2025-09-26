@@ -7,9 +7,14 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Link from "next/link";
+import useNews from "./useNews";
+import { INews } from "@/types/News";
 
 const News = () => {
     const isDesktop = useMediaQuery("(min-width: 768px)");
+    const { dataNews, isPendingNews } = useNews();
+
+    console.log(dataNews)
 
     return (
         <>
@@ -59,26 +64,21 @@ const News = () => {
                 </div>
                 <div className="p-10">
                     <h1 className="text-3xl font-bold text-center text-primary pb-5">Berita Kami</h1>
-                    <div className="flex flex-wrap justify-center gap-10">
-                        <Link href={"/news/1"} className="card bg-base-100 w-96 shadow-sm">
-                            <figure>
-                                <Image src="/image/news/geraipanglima.jpg" className="w-full" alt="banner" width={1000} height={1000}/>    
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Kaltim punya pusat oleh-oleh yang wajib kamu datengin, tau di mana?</h2>
-                                <p className="line-clamp-3">Tau nggak, di Samarinda ada pusat oleh-oleh yang jadi surganya pecinta kuliner Kaltim? Kalau belum, berarti kamu belum main ke Gerai Panglima! Pilihan oleh-olehnya banyak banget, tinggal pilih mau dibawa buat keluarga, teman, atau… buat diri sendiri aja?</p>
-                            </div>
-                        </Link>
-                        <Link href={"/news/2"} className="card bg-base-100 w-96 shadow-sm">
-                            <figure>
-                                <Image src="/image/news/geraipanglima.jpg" className="w-full" alt="banner" width={1000} height={1000}/>    
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Kaltim punya pusat oleh-oleh yang wajib kamu datengin, tau di mana?</h2>
-                                <p className="line-clamp-3">Tau nggak, di Samarinda ada pusat oleh-oleh yang jadi surganya pecinta kuliner Kaltim? Kalau belum, berarti kamu belum main ke Gerai Panglima! Pilihan oleh-olehnya banyak banget, tinggal pilih mau dibawa buat keluarga, teman, atau… buat diri sendiri aja?</p>
-                            </div>
-                        </Link>
-                    </div>
+                    {!isPendingNews && (
+                        <div className="flex flex-wrap justify-center gap-10">
+                            {dataNews?.map((item: INews) => (    
+                                <Link key={item?._id} href={`/news/${item?._id}`} className="card bg-base-100 w-96 shadow-sm">
+                                    <figure>
+                                        <Image src={`${item?.image}`} className="w-full" alt="banner" width={1000} height={1000}/>    
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{item?.title}</h2>
+                                        <p className="line-clamp-2" dangerouslySetInnerHTML={{ __html: `${item?.description}` }}></p>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
         </>

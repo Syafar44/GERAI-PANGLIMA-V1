@@ -6,9 +6,19 @@ import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import useDashboard from "./useDashboard";
+import { IBanner } from "@/types/Banner";
+import { IContent } from "@/types/Content";
+import Link from "next/link";
 
 const Dashboard = () => {
     const isDesktop = useMediaQuery("(min-width: 768px)");
+    const { 
+        dataBanner, 
+        isPendingBanner,
+        dataContent,
+        isPendingContent,
+    } = useDashboard()
 
     return (
         <div>
@@ -30,17 +40,14 @@ const Dashboard = () => {
 
                             className="rounded-xl w-full"
                         >
-                        {[
-                            "/image/banner1.jpg",
-                            "/image/banner2.jpg",
-                        ].map((src, i) => (
+                        {dataBanner?.map((item: IBanner) => (
                             <SwiperSlide
-                                key={i}
+                                key={item?._id}
                                 className="transition-all duration-300 ease-in-out"
                                 >
                                 <Image
-                                    src={src}
-                                    alt={`Slide ${i}`}
+                                    src={`${item?.image}`}
+                                    alt={`${item?.title}`}
                                     className="rounded-lg shadow-lg w-full"
                                     width={1000} height={1000}
                                 />
@@ -65,45 +72,43 @@ const Dashboard = () => {
                     #GERAIPANGLIMA
                 </h1>
             </div>
-            <section className="xl:p-20 py-10 flex justify-center">
-                <div className="w-full md:w-[80%]">
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        spaceBetween={30}
-                        slidesPerView={isDesktop ? 3 : 1}
-                        centeredSlides={true}    
-                        loop
-                        navigation
-                        pagination={{
-                            clickable: true,
-                            bulletClass: "swiper-pagination-bullet custom-bullet",
-                            bulletActiveClass: "swiper-pagination-bullet-active active-bullet",
-                        }}
+            {!isPendingContent && (
+                <section className="xl:p-20 py-10 flex justify-center">
+                    <div className="w-full md:w-[80%]">
+                        <Swiper
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={30}
+                            slidesPerView={isDesktop ? 3 : 1}
+                            centeredSlides={true}    
+                            loop
+                            navigation
+                            pagination={{
+                                clickable: true,
+                                bulletClass: "swiper-pagination-bullet custom-bullet",
+                                bulletActiveClass: "swiper-pagination-bullet-active active-bullet",
+                            }}
 
-                        className="rounded-xl"
-                    >
-                    {[
-                        "/image/poster1.jpg",
-                        "/image/poster1.jpg",
-                        "/image/poster1.jpg",
-                        "/image/poster1.jpg",
-                        "/image/poster1.jpg",
-                    ].map((src, i) => (
-                        <SwiperSlide
-                            key={i}
-                            className="transition-all duration-300 ease-in-out"
-                            >
-                            <Image
-                                src={src}
-                                alt={`Slide ${i}`}
-                                className="rounded-lg shadow-lg w-[80%] mx-auto md:w-full"
-                                width={1000} height={1000}
-                            />
-                        </SwiperSlide>
-                    ))}
-                    </Swiper>
-                </div>
-            </section>
+                            className="rounded-xl"
+                        >
+                        {dataContent.map((item: IContent) => (
+                            <SwiperSlide
+                                key={item?._id}
+                                className="transition-all duration-300 ease-in-out"
+                                >
+                                <Link target="_blank" href={`${item?.link}`}>
+                                    <Image
+                                        src={`${item?.image}`}
+                                        alt={`${item?.title}`}
+                                        className="rounded-lg shadow-lg w-[80%] mx-auto md:w-full"
+                                        width={1000} height={1000}
+                                    />
+                                </Link>
+                            </SwiperSlide>
+                        ))}
+                        </Swiper>
+                    </div>
+                </section>
+            )}
         </div>
     )
 }
