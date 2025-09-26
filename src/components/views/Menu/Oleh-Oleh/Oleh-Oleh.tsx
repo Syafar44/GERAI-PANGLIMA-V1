@@ -12,7 +12,7 @@ const OlehOleh = () => {
 
     const produk = dataProduk?.data || []
 
-    const { setUrl } = useChangeUrl()
+    const { setUrl, handleSearch } = useChangeUrl()
 
     useEffect(() => {
         if (router.isReady) {
@@ -24,6 +24,23 @@ const OlehOleh = () => {
         <>
             <div className="mt-14 sm:mt-16 lg:mt-20 xl:mt-24">
                 <Image src="/image/main/banner2.png" className="w-full" alt="banner" width={1000} height={1000}/>
+            </div>
+            <div className="flex justify-center md:justify-end bg-primary p-2 md:px-5 lg:px-10 xl:px-40 @xl:px-60">
+                <label className="input">
+                    <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeWidth="2.5"
+                        fill="none"
+                        stroke="currentColor"
+                        >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" className="grow" placeholder="Search" onChange={handleSearch} />
+                </label>
             </div>
             <section>
                 {!isPendingProduk && (
