@@ -14,7 +14,7 @@ const Contact = () => {
                     <h2 className="bg-primary text-center w-full mt-5 py-2 text-white font-semibold">Informasi Kontak</h2>
                     <div className="p-5 text-center grid gap-2">
                         <p>Jika Anda memiliki pertanyaan atau saran mengenai Syarat dan Ketentuan ini, Anda dapat menghubungi kami melalui email:</p>
-                        <p className="text-primary">GeraiPanglima@panglima.co.id</p>
+                        <p className="text-primary">rotidurianpanglima@gmail.com</p>
                         <p className="">atau kunjungi kami di alamat berikut:</p>
                         <p className="">Jl. Ir. H. Juanda No.55a, Sidodadi, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur</p>
                         <span className="border-y p-0.5 mt-2"></span>
@@ -22,7 +22,7 @@ const Contact = () => {
                         <p>
                             Untuk pertanyaan atau masukan terkait layanan pengaduan, silakan hubungi kami melalui:
                         </p>
-                        <span className="text-green-500">WhatsApp: <p className="text-primary">+621234567890</p></span>
+                        <span className="text-green-500">WhatsApp: <p className="text-primary">0822-2000-2237</p></span>
                         <span className="border-y p-0.5 mt-2"></span>
                     </div>
                 </div>

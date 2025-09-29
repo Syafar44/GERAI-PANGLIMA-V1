@@ -165,46 +165,6 @@ const Produk = () => {
                         </div>
                     )}
                 />
-                <Controller
-                    name="tags"
-                    control={control}
-                    render={({ field }) => (
-                        <div className="form-control">
-                        <label className="label text-black font-semibold pb-2">Select Tags</label>
-
-                        <div className="flex flex-wrap gap-4">
-                            {tags_list.map((item) => {
-                            const checked = tag.includes(item.key);
-
-                            return (
-                                <label key={item.key} className="flex items-center gap-2 cursor-pointer">
-                                <input
-                                    type="checkbox"
-                                    className="checkbox checkbox-error"
-                                    checked={checked}
-                                    onChange={(e) => {
-                                    const newValue = e.target.checked
-                                        ? [...tag, item.key]
-                                        : tag.filter((t) => t !== item.key);
-
-                                    field.onChange(newValue);
-                                    setTag(newValue);
-                                    }}
-                                />
-                                <span className="label-text">{item.label}</span>
-                                </label>
-                            );
-                            })}
-                        </div>
-
-                        {errors.tags && (
-                            <span className="text-sm text-red-500 mt-1">
-                            {errors.tags.message}
-                            </span>
-                        )}
-                        </div>
-                    )}
-                />
                     
                 <button
                     type="submit"

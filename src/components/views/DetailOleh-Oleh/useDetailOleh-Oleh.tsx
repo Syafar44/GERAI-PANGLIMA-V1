@@ -18,9 +18,29 @@ const useDetailOlehOleh = () => {
         enabled: router.isReady
     })
 
+    const getProduk = async () => {
+        const params = `category=oleh-oleh&limit=999`
+        const res = await produkServices.getAllProduk(params);
+            const { data } = res;
+        return data.data
+    }
+
+    const { data: dataAllProduk, isPending: isPendingAllProduk } = useQuery({
+        queryKey: ['All-OllehOleh'],
+        queryFn: getProduk,
+        enabled: router.isReady,
+    })
+
+    const randomProduk = dataAllProduk
+        ?.sort(() => Math.random() - 0.5)
+        .slice(0, 4);
+
     return {
         dataProduk,
         isPendingProduk,
+        dataAllProduk,
+        isPendingAllProduk,
+        randomProduk,
     }
 }
 

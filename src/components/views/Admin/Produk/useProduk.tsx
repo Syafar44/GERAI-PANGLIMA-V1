@@ -16,7 +16,6 @@ const schema = yup.object().shape({
     title: yup.string().required("Please input title"),
     description: yup.string(),
     price: yup.number().required("Please input price"),
-    tags: yup.array().of(yup.string().required()).min(1, "Please input tag"),
     image: yup.mixed<FileList | string>().required("Please input image"),
 });
 
@@ -64,9 +63,6 @@ const useProduk = (content: string) => {
         setValue,
     } = useForm({
         resolver: yupResolver(schema),
-        defaultValues: {
-            tags: [],
-        }
     });
 
     const preview = watch("image");

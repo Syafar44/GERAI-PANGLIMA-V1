@@ -1,3 +1,4 @@
+import contentServices from "@/services/content.service"
 import newsServices from "@/services/news.service"
 import { useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/router"
@@ -17,9 +18,23 @@ const useNews = () => {
         enabled: router.isReady,
     })
 
+    const getContent = async() => {
+        const res = await contentServices.getAllContent()
+        const { data } = res
+        return data.data
+    }
+
+    const { data: dataContent, isPending: isPendingContent } = useQuery({
+        queryKey: ['Content'],
+        queryFn: getContent,
+        enabled: router.isReady,
+    })
+
     return { 
         dataNews,
-        isPendingNews
+        isPendingNews,
+        dataContent,
+        isPendingContent
     }
 }
 

@@ -40,6 +40,18 @@ const Dashboard = () => {
 
                             className="rounded-xl w-full"
                         >
+                        {isPendingBanner && (
+                            <SwiperSlide
+                                    className="transition-all duration-300 ease-in-out"
+                                >
+                                <Image
+                                    src={`/image/banner1.jpg`}
+                                    alt={`Banner Ref`}
+                                    className="rounded-lg shadow-lg w-full"
+                                    width={1000} height={1000}
+                                />
+                            </SwiperSlide>
+                        )}
                         {dataBanner?.map((item: IBanner) => (
                             <SwiperSlide
                                 key={item?._id}
@@ -72,7 +84,7 @@ const Dashboard = () => {
                     #GERAIPANGLIMA
                 </h1>
             </div>
-            {!isPendingContent && (
+            {!isPendingContent ? (
                 <section className="xl:p-20 py-10 flex justify-center">
                     <div className="w-full md:w-[80%]">
                         <Swiper
@@ -108,6 +120,11 @@ const Dashboard = () => {
                         </Swiper>
                     </div>
                 </section>
+            ): (
+                <div className="flex justify-center items-center h-96 relative">
+                    <span className="loading loading-ring loading-xl scale-[6] text-primary"></span>
+                    <Image src="/image/icon/logo.png" className="w-24 absolute" alt="banner" width={1000} height={1000}/>
+                </div>
             )}
         </div>
     )

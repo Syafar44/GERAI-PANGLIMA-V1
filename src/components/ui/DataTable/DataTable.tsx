@@ -1,4 +1,5 @@
 import useChangeUrl from "@/hooks/useChangeUrl"
+import { convertIDR } from "@/utils/currency";
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { CiEdit, CiTrash } from "react-icons/ci"
@@ -74,7 +75,7 @@ const DataTable = (props: PropTypes) => {
                                 <div className="flex">
                                     <div className="w-full">
                                         <h2 className="text-lg">{`${item?.title}`}</h2>
-                                        {page === "produk" && <p className="text-sm">Rp{`${item?.price}`}</p>}
+                                        {page === "produk" && <p className="text-sm">{convertIDR(Number(item?.price))}</p>}
                                         {page === "content" && <p className="text-sm">{`${item?.link}`}</p>}
                                         {page === "produk" &&<div className="text-xs uppercase font-semibold opacity-60 py-2">{`${item?.category}`}</div>}
                                         {page === "produk" || page === "news" &&<p className="list-col-wrap text-xs" dangerouslySetInnerHTML={{ __html: `${item?.description}` }}></p>}
