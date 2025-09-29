@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import { FaFacebookF, FaInstagram, FaPlus, FaTiktok } from "react-icons/fa6";
 
 const orderClass: Record<number, string> = {
   1: "order-1",
@@ -121,6 +122,16 @@ const DashboardLayout = (props: PropTypes) => {
           </div>
         </div>
       </nav>
+      <div className="fab">
+        <div tabIndex={0} role="button" className="btn btn-lg btn-circle bg-primary text-white"><FaPlus size={30} /></div>
+        <div className="fab-close">
+          <span className="btn btn-circle btn-lg bg-secondary border-primary text-primary rotate-45"><FaPlus size={30} /></span>
+        </div>
+
+        <Link href={"https://www.tiktok.com/@geraipanglimasamarinda"} target="_blank"> <button className="btn btn-lg btn-circle bg-primary text-white"><FaTiktok size={30} /></button></Link>
+        <Link href={"https://www.facebook.com/oleholehkhaskaltim"} target="_blank"> <button className="btn btn-lg btn-circle bg-primary text-white"><FaFacebookF size={30} /></button></Link>
+        <Link href={"https://www.instagram.com/geraipanglima/"} target="_blank"> <button className="btn btn-lg btn-circle bg-primary text-white"><FaInstagram size={30} /></button></Link>
+      </div>
       {children}
       <footer>
         <div
