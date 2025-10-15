@@ -26,7 +26,7 @@ const OlehOleh = () => {
                 <Image src="/image/main/banner2.png" className="w-full" alt="banner" width={1000} height={1000}/>
             </div>
             <div className="flex justify-center md:justify-end bg-primary p-2 md:px-5 lg:px-10 xl:px-40 @xl:px-60">
-                <label className="input">
+                <label className="input dark:text-white">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g
                         strokeLinejoin="round"
@@ -39,7 +39,7 @@ const OlehOleh = () => {
                         <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" className="grow" placeholder="Search" onChange={handleSearch} />
+                    <input type="search" className="grow dark:text-white" placeholder="Search" onChange={handleSearch} />
                 </label>
             </div>
             <section>

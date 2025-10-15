@@ -61,7 +61,7 @@ const News = () => {
                         <h1 className="text-3xl font-bold text-center text-primary pb-5">Berita Kami</h1>
                         <div className="flex flex-wrap justify-center gap-10">
                             {dataNews?.map((item: INews) => (    
-                                <Link key={item?._id} href={`/news/${item?._id}`} className="card bg-base-100 w-96 shadow-sm">
+                                <Link key={item?._id} href={`/news/${item?._id}`} className="card bg-base-100 w-96 shadow-sm dark:bg-white">
                                     <figure>
                                         <Image src={`${item?.image}`} className="w-full" alt="banner" width={1000} height={1000}/>    
                                     </figure>
