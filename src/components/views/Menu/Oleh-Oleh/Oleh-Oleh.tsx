@@ -44,10 +44,10 @@ const OlehOleh = () => {
             </div>
             <section>
                 {!isPendingProduk ? (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:px-20 xl:px-32 2xl:px-60 py-10">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 sm:px-20 xl:px-32 2xl:px-60 py-10">
                         {produk.map((item: IProduk) => (    
-                            <Link key={item?._id} href={`/menu-kami/oleh-oleh/${item?.slug}`} className="p-20 text-center flex flex-col justify-between items-center gap-2 hover:bg-secondary/10 hover:scale-105 duration-200 rounded">
-                                <Image src={`${item?.image}`} className="w-full" alt="banner" width={1000} height={1000}/>
+                            <Link key={item?._id} href={`/menu-kami/oleh-oleh/${item?.slug}`} className="text-center flex flex-col justify-between items-center gap-2 hover:bg-secondary/10 hover:scale-105 duration-200">
+                                <Image src={`${item?.image}`} className="w-[150px]" alt="banner" width={1000} height={1000}/>
                                 <p className="text-xl text-nowrap">{item?.title}</p>
                                 <span className="text-lg text-nowrap text-primary">{convertIDR(item?.price || 0)}</span>
                             </Link>
