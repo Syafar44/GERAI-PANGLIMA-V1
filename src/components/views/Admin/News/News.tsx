@@ -75,7 +75,7 @@ const News = () => {
                             type="text"
                             autoComplete="off"
                             className={cn(
-                                "input input-bordered w-full",
+                                "input input-bordered w-full dark:bg-white dark:border-black",
                                 errors.title ? "input-error" : ""
                             )}
                         />

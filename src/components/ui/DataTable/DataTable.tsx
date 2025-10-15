@@ -61,9 +61,9 @@ const DataTable = (props: PropTypes) => {
     return (
         <div className="border-l border-black/60 p-5 w-4xl">
             <div>
-                <input type="text" placeholder={`Cari ${page}`} onChange={(e) => handleSearch(e)} className="input input-bordered w-full mb-5"/>
+                <input type="text" placeholder={`Cari ${page}`} onChange={(e) => handleSearch(e)} className="input input-bordered w-full mb-5 dark:bg-white dark:border-black"/>
             </div>
-            <ul className="list bg-base-100 rounded-box shadow-md">
+            <ul className="list bg-base-100 rounded-box shadow-md dark:bg-white dark:border-black">
                 <li className="p-4 pb-2 text-xl opacity-60 tracking-wide">Daftar {page}</li>
                 {!isPending ? (
                     <>
@@ -93,14 +93,14 @@ const DataTable = (props: PropTypes) => {
                         ))}
                     </>
                 ): (
-                    <div className="flex justify-center items-center p-20 bg-gray-200">
+                    <div className="flex justify-center items-center p-20 bg-gray-200 dark:bg-white dark:border-black">
                         <p className="text-lg">Sedang memuat data...</p>
                     </div>
                 )}
             </ul>
             <div className="join mt-5">
                 <button
-                    className="join-item btn"
+                    className="join-item btn dark:bg-white dark:text-black border-black"
                     onClick={() => handleChangePage(current - 1)}
                     disabled={current <= 1}
                 >
@@ -108,14 +108,14 @@ const DataTable = (props: PropTypes) => {
                 </button>
 
                 <button
-                    className="join-item btn"
+                    className="join-item btn dark:bg-white dark:text-black border-black"
                     onClick={() => handleChangePage(1)}
                 >
                     Page {current}
                 </button>
 
                 <button
-                    className="join-item btn"
+                    className="join-item btn dark:bg-white dark:text-black border-black"
                     onClick={() => handleChangePage(current + 1)}
                     disabled={current >= totalPages}
                 >

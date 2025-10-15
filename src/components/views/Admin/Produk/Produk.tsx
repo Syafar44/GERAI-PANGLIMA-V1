@@ -78,7 +78,7 @@ const Produk = () => {
                             type="text"
                             autoComplete="off"
                             className={cn(
-                                "input input-bordered w-full",
+                                "input input-bordered w-full dark:bg-white dark:border-black",
                                 errors.title ? "input-error" : ""
                             )}
                         />
@@ -103,7 +103,7 @@ const Produk = () => {
                             type="number"
                             autoComplete="off"
                             className={cn(
-                                "input input-bordered w-full",
+                                "input input-bordered w-full dark:bg-white dark:border-black",
                                 errors.price ? "input-error" : ""
                             )}
                         />
@@ -148,7 +148,7 @@ const Produk = () => {
 
                         <select
                             {...field}
-                            className={`select select-bordered w-full ${
+                            className={`select select-bordered w-full dark:bg-white dark:border-black ${
                             errors.category ? "select-error" : ""
                             }`}
                         >
