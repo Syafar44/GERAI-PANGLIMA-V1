@@ -20,7 +20,7 @@ const DetailOlehOleh = () => {
             {!isPendingProduk ? (
                 <section className="mx-5 lg:mx-20 2xl:mx-80 py-10 grid gap-10">
                     <div className="flex flex-col items-center md:flex-row gap-5 md:gap-20">
-                        <Image src={`${dataProduk?.image}`} className="w-[250px] md:w-[500px]" alt="banner" width={1000} height={1000}/>
+                        <Image src={`${dataProduk?.image}`} className="w-[250px] md:w-[500px] rounded-xl" alt="banner" width={1000} height={1000}/>
                         <div className="w-full md:w-[800px] flex flex-col gap-5">
                             <h1 className="text-xl md:text-3xl font-bold">{dataProduk?.title}</h1>
                             <span className="text-lg md:text-xl text-primary">{convertIDR(dataProduk?.price)}</span>
@@ -42,7 +42,7 @@ const DetailOlehOleh = () => {
                             <div className="grid md:grid-cols-2 xl:grid-cols-4">
                                 {randomProduk?.map((item: IProduk) => (    
                                     <Link key={item._id} href={"/menu-kami/oleh-oleh/roti-durian-panglima"} className="p-20 text-center flex flex-col items-center justify-between gap-2 hover:bg-secondary/10 hover:scale-105 duration-200 rounded">
-                                        <Image src={`${item.image}`} className="w-full" alt={`${item.title}`} width={1000} height={1000}/>
+                                        <Image src={`${item.image}`} className="w-full rounded-xl" alt={`${item.title}`} width={1000} height={1000}/>
                                         <p className="text-xl text-nowrap">{item.title}</p>
                                         <span className="text-lg text-nowrap text-primary">{convertIDR(Number(item.price))}</span>
                                     </Link>

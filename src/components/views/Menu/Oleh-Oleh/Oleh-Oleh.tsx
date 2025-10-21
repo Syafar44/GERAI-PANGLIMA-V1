@@ -11,6 +11,7 @@ const OlehOleh = () => {
     const { dataProduk, isPendingProduk, router } = useOlehOleh();
 
     const produk = dataProduk?.data || []
+    const produkReverse = [...produk].reverse();
 
     const { setUrl, handleSearch } = useChangeUrl()
 
@@ -45,11 +46,15 @@ const OlehOleh = () => {
             <section>
                 {!isPendingProduk ? (
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 sm:px-20 xl:px-32 2xl:px-60 py-10">
-                        {produk.map((item: IProduk) => (    
-                            <Link key={item?._id} href={`/menu-kami/oleh-oleh/${item?.slug}`} className="text-center flex flex-col justify-between items-center gap-2 hover:bg-secondary/10 hover:scale-105 duration-200">
-                                <Image src={`${item?.image}`} className="w-[110px]" alt="banner" width={1000} height={1000}/>
-                                <p className="text-xl text-nowrap">{item?.title}</p>
-                                <span className="text-lg text-nowrap text-primary">{convertIDR(item?.price || 0)}</span>
+                        {produkReverse.map((item: IProduk) => (    
+                            <Link key={item?._id} href={`/menu-kami/oleh-oleh/${item?.slug}`} className="flex flex-col justify-between items-center gap-2 hover:bg-secondary/10 hover:scale-105 duration-200">
+                                <div className="flex items-center h-full">
+                                    <Image src={`${item?.image}`} className="w-[150px] rounded-xl" alt="banner" width={1000} height={1000}/>
+                                </div>
+                                <div>
+                                    <p className="text-sm md:text-xl text-center">{item?.title}</p>
+                                    <p className="text-lg text-center text-primary">{convertIDR(item?.price || 0)}</p>
+                                </div>
                             </Link>
                         ))}
                     </div>

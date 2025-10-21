@@ -12,14 +12,14 @@ import Italic from "@tiptap/extension-italic";
 import Strike from "@tiptap/extension-strike";
 import Code from "@tiptap/extension-code";
 import History from "@tiptap/extension-history";
-// Custom
 import * as Icons from "./Icon";
 
 type TextEditorProps = {
   onChange?: (html: string) => void;
+  defaultValue?: string
 };
 
-export function TextEditor({ onChange }: TextEditorProps) {
+export function TextEditor({ onChange, defaultValue }: TextEditorProps) {
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -36,6 +36,7 @@ export function TextEditor({ onChange }: TextEditorProps) {
       Strike,
       Code,
     ],
+    content: defaultValue || "",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
       if (onChange) onChange(html);

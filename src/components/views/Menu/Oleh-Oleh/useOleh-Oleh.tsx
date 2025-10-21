@@ -14,7 +14,7 @@ const useOlehOleh = () => {
             params += `&search=${currentSearch}`
         }
         const res = await produkServices.getAllProduk(params);
-            const { data } = res;
+        const { data } = res;
         return data
     }
 
