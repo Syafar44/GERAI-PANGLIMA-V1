@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect  } from "react";
 import classNames from "classnames";
 // => Tiptap packages
 import { useEditor, EditorContent, Editor } from "@tiptap/react";
@@ -42,6 +42,12 @@ export function TextEditor({ onChange, defaultValue }: TextEditorProps) {
       if (onChange) onChange(html);
     },
   }) as Editor;
+
+  useEffect(() => {
+    if (editor && defaultValue !== undefined) {
+      editor.commands.setContent(defaultValue || "");
+    }
+  }, [defaultValue, editor]);
 
   const toggleBold = useCallback(() => {
     editor.chain().focus().toggleBold().run();

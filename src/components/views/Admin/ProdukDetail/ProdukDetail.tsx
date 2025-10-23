@@ -8,7 +8,6 @@ import Image from "next/image";
 // import ImageTab from "./ImageTab";
 
 const ProdukDetail = () => {
-  const [content, setContent] = useState("");
   
   const {
     dataProduk,
@@ -25,7 +24,9 @@ const ProdukDetail = () => {
     handleDeleteImage,
     isPendingMutateDeleteFile,
     preview,
-  } = useProdukDetail(content);
+    setContent,
+    refetchProduk
+  } = useProdukDetail();
 
   useEffect(() => {
     setValue("title", `${dataProduk?.title}`);
@@ -42,9 +43,8 @@ const ProdukDetail = () => {
 
   return (
     <section>
-      {!isPendingDataProduk && (
+      {dataProduk && (
         <form
-          className=""
           onSubmit={handleSubmit(handleUpdate)}
         >
           <div className="flex gap-5">

@@ -5,7 +5,7 @@ import { IProduk } from "@/types/Produk";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
@@ -17,9 +17,10 @@ const schemaUpdateInfo = yup.object().shape({
   image: yup.mixed<FileList | string>(),
 });
 
-const useDetailProduk = (content: string) => {
+const useDetailProduk = () => {
   const { query, isReady } = useRouter();
   const { setToaster } = useContext(ToasterContext);
+  const [content, setContent] = useState("");
 
   const {
     handleUploadFile,
@@ -92,6 +93,8 @@ const useDetailProduk = (content: string) => {
       });
     },
     onSuccess: () => {
+      console.log("sukses loh")
+      setContent("")
       refetchProduk();
       setToaster({
         type: "success",
@@ -124,6 +127,8 @@ const useDetailProduk = (content: string) => {
     isPendingMutateUploadFile,
     handleDeleteImage,
     isPendingMutateDeleteFile,
+    setContent,
+    refetchProduk,
   };
 };
 
