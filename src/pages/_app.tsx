@@ -1,3 +1,4 @@
+import { CartProvider } from "@/contexts/CartContext";
 import { onErrorHander } from "@/libs/axios/reponseHandler";
 import "@/styles/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -24,7 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
       <QueryClientProvider client={queryClient}>
         <NextThemesProvider attribute="class" defaultTheme="light">
-          <Component {...pageProps} />
+          <CartProvider>
+            <Component {...pageProps} />
+          </CartProvider>
         </NextThemesProvider>
       </QueryClientProvider>
   )

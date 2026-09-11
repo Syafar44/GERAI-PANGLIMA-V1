@@ -163,6 +163,9 @@ const DashboardLayout = (props: PropTypes) => {
                 <li>
                   <Link href={"/delivery"}> ➤ Pemesanan</Link>
                 </li>
+                <li>
+                  <Link href={"/riwayat-transaksi"}> ➤ Riwayat Transaksi</Link>
+                </li>
               </ul>
             </nav>
             <div>
